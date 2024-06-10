@@ -2,6 +2,8 @@ import { useSignUp } from "@clerk/clerk-react";
 import PropTypes from "prop-types";
 import Button from "@/components/Button";
 
+const basePath = '/wanderwebapp-test';
+
 const SignInWithOAuth = ({ provider }) => {
   const { signUp } = useSignUp();
 
@@ -11,7 +13,7 @@ const SignInWithOAuth = ({ provider }) => {
     try {
       await signUp.authenticateWithRedirect({
         strategy: `oauth_${provider}`,
-        redirectUrl: `${window.location.origin}/oauth-callback`,
+        redirectUrl: `${basePath}/oauth-callback`,
         // afterSignInUrl: `${window.location.origin}/collect-name`,
         // redirectUrlComplete: `${window.location.origin}/download`
       });

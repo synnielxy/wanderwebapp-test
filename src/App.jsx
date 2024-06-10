@@ -60,7 +60,7 @@ export default function App() {
   return (
     <div className="min-h-screen w-full">
       <IconContext.Provider value={{ color: "#8391A1", size: 24 }}>
-        <Router>
+        <Router basename="/wanderwebapp-test">
           <Routes>
             <Route path="/" element={<RootRedirect />} />
             <Route path="/inviteToGuess" element={<InviteToGuessPage />} />
